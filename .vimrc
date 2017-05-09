@@ -1,24 +1,12 @@
 " -------------------------
 "  VIM template by @danema
-" ------------------------- 
+" -------------------------
 
 " User interface
   set background=dark
   let g:solarized_termcolors=256
   let g:solarized_termtrans = 0
   set guifont=Menlo\ Regular:h20
-
-  if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-    \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-    " Use the guicolorscheme plugin to makes 256-color or 88-color
-    " terminal use GUI colors rather than cterm colors.
-    runtime! plugin/guicolorscheme.vim
-    GuiColorScheme solarized
-  else
-    " For 8-color 16-color terminals or for gvim, just use the
-    " regular :colorscheme command.
-    colorscheme solarized
-  endif
 
 " Window navigation
   map <Esc>[1;3A :wincmd k<CR>
@@ -30,8 +18,11 @@
   let g:NERDTreeMapOpenInTab='<Enter>'
   map <C-n> :NERDTreeTabsToggle<CR>
 
-" Support Mouse-scroll
+" Support Mouse-scroll & Better File navigation
   set mouse=nicr
+  set nocompatible
+  set whichwrap+=<,>,[,]
+  set backspace=indent,eol,start
 
 " Syntax highlighting & indentation
   syntax enable
@@ -74,6 +65,29 @@
   autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
   let g:ycm_seed_identifiers_with_syntax = 1
 
+" Syntastic
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 1
+
+" Solarized
+  if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+    \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+    " Use the guicolorscheme plugin to makes 256-color or 88-color
+    " terminal use GUI colors rather than cterm colors.
+    runtime! plugin/guicolorscheme.vim
+    GuiColorScheme solarized
+  else
+    " For 8-color 16-color terminals or for gvim, just use the
+    " regular :colorscheme command.
+    colorscheme solarized
+  endif
+
 " Vundle
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
@@ -88,10 +102,11 @@
     Plugin 'Xuyuanp/nerdtree-git-plugin'
     Plugin 'scrooloose/nerdtree'
     Plugin 'jistr/vim-nerdtree-tabs'
-  
+
   " Navigation
     Plugin 'wincent/command-t'
-    Plugin 'ctrlp.vim' 
+    Plugin 'ctrlp.vim'
+    Plugin 'trotter/autojump.vim'
 
   " Programming support
     Plugin 'vim-ruby/vim-ruby'
@@ -104,14 +119,15 @@
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+    Plugin 'scrooloose/syntastic'
 
   " In-Vim Shell
-    Plugin 'Conque-Shell' 
+    Plugin 'Conque-Shell'
     Plugin 'shougo/vimshell.vim'
     Plugin 'shougo/vimproc.vim'
 
   " Script Library
     Plugin 'L9'
     Plugin 'Improved-AnsiEsc'
- 
+
   call vundle#end()
