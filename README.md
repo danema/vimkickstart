@@ -2,6 +2,8 @@
 This project was born from a point where me and my development team got really frustrated about the lack of fast Ruby IDE's. In the search towards a fast and advanced editor we found Vim (with the right configuration) capable of being fast like Sublime Text and provide us with the nice features an IDE provides like Code Completion and GIT support.
 This repo should provide you with a nice Kickstart-Vim-Configuration you can build on.
 
+![Alt text](https://cloud.githubusercontent.com/assets/962263/25851310/95990e94-34c5-11e7-859c-9bf6d0983f0c.png "Screenshot")
+
 ----
 ## Quick Start
 1. Clone this repo in your home folder which will create **~/vimkickstart**.
@@ -29,5 +31,4 @@ brew install cmake
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
 ```
-7. Install eclim to get Code Completion from Eclipse (optional)
-see [eclim.org](http://eclim.org/install.html)
+7. Install [eclim](http://eclim.org/install.html) to get Code Completion from Eclipse (optional)
