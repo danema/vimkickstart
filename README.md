@@ -12,7 +12,7 @@ git clone git@github.com:danema/vimkickstart.git
 ```
 2. Create symbolic links to the repo
 ```bash
-if [ -f "$HOME/.vimrc" ]; then rm .vimrc && ln -s vimkickstart/.vimrc; else ln -s vimkickstart/.vimrc; fi; if [ -d "$HOME/.vim" ]; then mv .vim vimkickstart/ && ln -s vimkickstart/.vim; else ln -s vimkickstart/.vim; fi
+if [ -f "$HOME/.vimrc" ]; then mv .vimrc .vimrc.bck && ln -s vimkickstart/.vimrc; else ln -s vimkickstart/.vimrc; fi; if [ -d "$HOME/.vim" ]; then mv .vim vimkickstart/ && ln -s vimkickstart/.vim; else ln -s vimkickstart/.vim; fi
 ```
 3. Install the latest version of Vim
 ```bash
