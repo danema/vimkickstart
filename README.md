@@ -10,25 +10,29 @@ This repo should provide you with a nice Kickstart-Vim-Configuration you can bui
 ```bash
 git clone git@github.com:danema/vimkickstart.git
 ```
-2. Create symbolic links to the repo
+2. Install Vundle (VIM plugin manager)
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+3. Create symbolic links to the repo
 ```bash
 if [ -f "$HOME/.vimrc" ]; then mv .vimrc .vimrc.bck && ln -s vimkickstart/.vimrc; else ln -s vimkickstart/.vimrc; fi; if [ -d "$HOME/.vim" ]; then mv .vim vimkickstart/ && ln -s vimkickstart/.vim; else ln -s vimkickstart/.vim; fi
 ```
-3. Install the latest version of Vim
+4. Install the latest version of Vim
 ```bash
 brew update && brew install vim --with-override-system-vi
 ```
-4. Install Vim Plugins
+5. Install Vim Plugins
 ```bash
 vim +PluginInstall +qall
 ```
-5. Install Cmake (Required for Code Completion)
+6. Install Cmake (Required for Code Completion)
 ```bash
 brew install cmake
 ```
-6. Compile YCM (Required for Code Completion)
+7. Compile YCM (Required for Code Completion)
 ```bash
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
 ```
-7. Install [eclim](http://eclim.org/install.html) to get Code Completion from Eclipse (optional)
+8. Install [eclim](http://eclim.org/install.html) to get Code Completion from Eclipse (optional)
