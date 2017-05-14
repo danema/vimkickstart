@@ -16,7 +16,9 @@
 
 " NERDTree
   let g:NERDTreeMapOpenInTab='<Enter>'
+  let NERDTreeShowHidden=1
   map <C-n> :NERDTreeTabsToggle<CR>
+  autocmd BufWritePost * call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd w
 
 " Support Mouse-scroll & Better File navigation
   set mouse=nicr
