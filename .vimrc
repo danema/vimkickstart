@@ -138,6 +138,7 @@ augroup END
     Plugin 'airblade/vim-gitgutter'
     Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
     Plugin 'scrooloose/syntastic'
+    Plugin 'mmozuras/vim-whitespace'
 
   " In-Vim Shell
     Plugin 'Conque-Shell'
