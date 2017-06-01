@@ -26,13 +26,21 @@ brew update && brew install vim --with-override-system-vi
 ```bash
 vim +PluginInstall +qall
 ```
-6. Install Cmake (Required for Code Completion)
+6. Complete Solarized installation
+```bash
+cp ~/.vim/bundle/vim-colors-solarized/colors/solarized.vim ~/.vim/colors/
+```
+7. Install Silver Searcher
+```bash
+brew install the_silver_searcher
+```
+8. Install Cmake (Required for Code Completion)
 ```bash
 brew install cmake
 ```
-7. Compile YCM (Required for Code Completion)
+9. Compile YCM (Required for Code Completion)
 ```bash
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
 ```
-8. Install [eclim](http://eclim.org/install.html) to get Code Completion from Eclipse (optional)
+10. Install [eclim](http://eclim.org/install.html) to get Code Completion from Eclipse (optional)

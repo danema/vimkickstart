@@ -113,6 +113,7 @@ augroup END
   Plugin 'VundleVim/Vundle.vim'
 
   " Colorscheme
+    Plugin 'altercation/vim-colors-solarized'
     Plugin 'guicolorscheme.vim'
     Plugin 'godlygeek/csapprox'
 
